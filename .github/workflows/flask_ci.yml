@@ -38,7 +38,7 @@ jobs:
     - name: Update image tag
       run: |
         cd gitops
-        kustomize edit set image hello-app=${{ env.IMAGE }}:${{ github.sha }}
+        kustomize edit set image flask=${{ env.IMAGE }}:${{ github.sha }}
 
     - name: Commit and push
       run: |
