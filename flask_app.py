@@ -14,5 +14,8 @@ def hello():
 def healthz():
 	return {"status":"ok"}
 
+def add_numbers(a, b):
+	return a + b
+
 if __name__ == "__main__":
 	app_100.run(host="0.0.0.0", port=5000)
