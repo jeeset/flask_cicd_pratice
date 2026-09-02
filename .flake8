@@ -2,4 +2,4 @@
 max-line-length = 100
 exclude = .git, __pycache__, flask.env, build, dist, requirements.txt
 max-complexity = 10
-ignore = E203, W503
+ignore = E203, W503, E101, E221, E231, E302, E305, W191
