@@ -55,7 +55,7 @@ jobs:
       run: |
         cd gitops
         echo "IMAGE=$IMAGE SHA=$SHA"
-        kustomize edit set image flask = ${{ env.IMAGE }}:${{ github.sha }}
+        kustomize edit set image flask=${{ env.IMAGE }}:${{ github.sha }}
     # 把修改 commit 回 GitOps repo
     - name: Commit and push
       run: |
