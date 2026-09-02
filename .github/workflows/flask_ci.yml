@@ -4,9 +4,11 @@ name: CI
 on:
   push:
     branches: [main] # 只有推到 main 分支才跑
+
 # 全域變數
 env:
   IMAGE: quay.io/jeeset/flask_3.1.3
+
 # jobs並列執行，steps序列執行
 jobs:
   build-and-update:
@@ -52,6 +54,7 @@ jobs:
     - name: Update image tag
       run: |
         cd gitops
+        echo "IMAGE=$IMAGE SHA=$SHA"
         kustomize edit set image flask = ${{ env.IMAGE }}:${{ github.sha }}
     # 把修改 commit 回 GitOps repo
     - name: Commit and push
