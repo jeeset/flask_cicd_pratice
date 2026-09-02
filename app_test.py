@@ -1,11 +1,11 @@
 import pytest
-from app import app_100
+from flask_app import app_100, add_numbers
 
 # 開一個假的瀏覽器測試環境，用完即刪
 @pytest.fixture
 def client():
-    app.config['TESTING'] = True
-    with app.test_client() as client:
+    app_100.config['TESTING'] = True
+    with app_100.test_client() as client:
         yield client
 
 def test_health(client):
